@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
   -- completion
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
-  use 'Shougo/deoppet.nvim'
+--  use 'Shougo/deoppet.nvim'
   -- add pictograms to completion
   use 'onsails/lspkind-nvim'
   -- package manager for the language servers

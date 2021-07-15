@@ -24,8 +24,8 @@ require'compe'.setup {
 
   source = {
     -- for all things latex
-    omni = {filetypes = {'tex'}};
-    spell = {filetypes = {'markdown', 'tex'}};
+--    omni = {filetypes = {'tex'}};
+--    spell = {filetypes = {'markdown', 'tex'}};
     -- others
     path = true;
     buffer = true;
@@ -92,8 +92,7 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 -- expand snippets from menu
 -- note that <CR> is carrage return, i.e. Return or Enter
 vim.cmd[[inoremap <silent><expr> <CR>      compe#confirm('<CR>')]]
-
-
-
-
-
+vim.cmd[[inoremap <silent><expr> <C-Space> compe#complete()]]
+vim.cmd[[inoremap <silent><expr> <C-e>     compe#close('<C-e>')]]
+vim.cmd[[inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })]]
+vim.cmd[[inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })]]

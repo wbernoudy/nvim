@@ -69,10 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["deoppet.nvim"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/deoppet.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
