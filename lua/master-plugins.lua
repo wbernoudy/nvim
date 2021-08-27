@@ -11,16 +11,15 @@ end
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
   -- Plugins
   -- latex
   use 'lervag/vimtex'
---  use 'kyazdani42/nvim-tree.lua'
   -- language server protocol
   use 'neovim/nvim-lspconfig'
   -- completion
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
---  use 'Shougo/deoppet.nvim'
   -- add pictograms to completion
   use 'onsails/lspkind-nvim'
   -- package manager for the language servers
@@ -30,7 +29,5 @@ return require('packer').startup(function(use)
   use 'kabouzeid/nvim-lspinstall'
   -- colour
   use 'altercation/vim-colors-solarized'
-  -- See https://github.com/nvim-treesitter/nvim-treesitter#supported-languages for languages supported
-  --  use {'nvim-treesitter/nvim-treesitter', run= ':TSUpdate'}
   end)
 
