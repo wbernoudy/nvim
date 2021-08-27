@@ -31,6 +31,6 @@ return require('packer').startup(function(use)
   -- colour
   use 'altercation/vim-colors-solarized'
   -- See https://github.com/nvim-treesitter/nvim-treesitter#supported-languages for languages supported
---  use {'nvim-treesitter/nvim-treesitter', run= ':TSUpdate'}
-end)
+  --  use {'nvim-treesitter/nvim-treesitter', run= ':TSUpdate'}
+  end)
 
