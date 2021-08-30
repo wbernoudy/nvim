@@ -20,8 +20,14 @@
 
 
 --vim.cmd[[let g:vimtex_quickfix_ignore_filters = {'overfull' : 0, 'underfull' : 0}]]
-vim.cmd[[let g:vimtex_view_method = 'skim']]
+-- vim.g.vimtex_fold_enabled = true
+-- vim.g.vimtex_fold_manual = true
+--vim.cmd[[let g:vimtex_view_method = 'skim']]
+--
 vim.cmd[[  augroup vimtex_config
     au!
     au User VimtexEventQuit call vimtex#compiler#clean(0)
   augroup END]]
+
+vim.g.vimtex_view_method = 'skim'
+vim.g.vimtex_fold_enabled = 'true'

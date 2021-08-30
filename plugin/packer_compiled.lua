@@ -69,13 +69,17 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["lspkind-nvim"] = {
+  ["Catppuccino.nvim"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/Catppuccino.nvim"
   },
-  ["nvim-compe"] = {
+  ["completion-nvim"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/completion-nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -85,13 +89,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
-  ["vim-colors-solarized"] = {
+  ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/vim-colors-solarized"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-vsnip"] = {
     loaded = true,
