@@ -73,13 +73,49 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/Catppuccino.nvim"
   },
-  ["completion-nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-calc"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-calc"
+  },
+  ["cmp-latex-symbols"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-latex-symbols"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
+  ["cmp-spell"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-spell"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -88,10 +124,6 @@ _G.packer_plugins = {
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
-  },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

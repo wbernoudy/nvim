@@ -29,8 +29,32 @@ return require('packer').startup(function(use)
   require('plugin-settings.lspinstall-config')
 
   -- completion
-  use 'nvim-lua/completion-nvim'
-  require('plugin-settings.nvim-completion-config')
+  -- Install nvim-cmp, and buffer source as a dependency
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "onsails/lspkind-nvim",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/cmp-calc",
+      "kdheepak/cmp-latex-symbols",
+      "f3fora/cmp-spell",
+    }
+  }
+  require('plugin-settings.cmp-config')
+  --
+  --
+  --use { 'ms-jpq/coq_nvim', branch = 'coq'} -- main one
+  ----use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
+  --require('plugin-settings.coq-config')
+
+  --use 'nvim-lua/completion-nvim'
+  --require('plugin-settings.nvim-completion-config')
+  ---- buffer completion
+  --use 'steelsojka/completion-buffers'
   --use 'hrsh7th/nvim-compe'
   --require('plugin-settings.compe-config')
   -- add pictograms to completion
@@ -40,12 +64,16 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   require('plugin-settings.vsnip-config')
 
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-      -- TSInstall <whatever language I want to install>
-  }
-  require('plugin-settings.treesitter-config')
+  -- treesitter
+--  use {'nvim-treesitter/nvim-treesitter',
+--      run = ':TSUpdate'
+--      -- TSInstall <whatever language I want to install>
+--  }
+  --  require('plugin-settings.treesitter-config')
+--  use {'nvim-treesitter/completion-treesitter'}
+  -- spell checker
+--  use {'lewis6991/spellsitter.nvim'}
+--  require('plugin-settings.spellsitter-config')
 
   -- colour
   use "Pocco81/Catppuccino.nvim"
@@ -59,8 +87,7 @@ return require('packer').startup(function(use)
   --require('plugin-settings.solarized-config')
 
   -- status line
-  use {
-  'hoob3rt/lualine.nvim',
+  use {'hoob3rt/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   require('plugin-settings.lualine-config')
 
@@ -68,8 +95,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- telescope
-  use {
-    'nvim-telescope/telescope.nvim',
+  use {'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   require('plugin-settings.telescope-config')
@@ -80,6 +106,7 @@ return require('packer').startup(function(use)
   --require('plugin-settings.fastfold-config')
 
   end)
+
 
 
 

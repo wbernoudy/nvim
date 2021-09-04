@@ -23,5 +23,10 @@ vim.cmd[[autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'
 
 vim.o.smartcase = true
 
---vim.o.spell = true
---vim.o.ruler = true
+-- spell checking
+vim.o.spell = true
+vim.o.spelllang = 'en_ca'
+
+-- scrolling options
+vim.g.scrolloff = 5
+

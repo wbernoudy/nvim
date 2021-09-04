@@ -30,4 +30,4 @@ vim.cmd[[  augroup vimtex_config
   augroup END]]
 
 vim.g.vimtex_view_method = 'skim'
-vim.g.vimtex_fold_enabled = 'true'
+--vim.g.vimtex_fold_enabled = 'true'
