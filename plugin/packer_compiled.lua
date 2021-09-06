@@ -69,10 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  NeoSolarized = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/NeoSolarized"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-buffer"
@@ -105,17 +101,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
-  ["lightspeed.nvim"] = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lightspeed.nvim"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
-  ["lualine.nvim"] = {
+  ["lush.nvim"] = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -129,25 +125,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/packer.nvim"
-  },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-vsnip"] = {
     loaded = true,

@@ -1,0 +1,107 @@
+{
+  "Environment": {
+    "prefix": ["en"],
+    "body": ["\\begin{${1}}", 
+                "${2:text}",
+                "\\end{$1}",
+                "$0"
+    ],
+    "description": "LaTex Environment."
+  },
+  "Equation": {
+    "prefix": ["eq"],
+    "body": ["\\begin{${1|equation,equation*|}}", 
+                "\\begin{aligned}",
+                "${2:math}",
+                "\\end{aligned}",
+                "\\end{$1}",
+                "$0"
+    ],
+    "description": "LaTex Equation."
+  },
+  "Inside Equation": {
+    "prefix": ["ie"],
+    "body": ["${1} &${2} \\\\\\\\ $0"],
+    "description": "LaTex Inside Equation."
+  },
+  "Group Theory Sum": {
+    "prefix": ["gsum"],
+    "body": ["\\sum_{${1} \\in ${2}} $0"],
+    "description": "LaTex Group Theory Sum."
+  },
+  "Sum": {
+    "prefix": ["sum"],
+    "body": ["\\sum_{${1} = ${2}}^{${3}} $0"],
+    "description": "LaTex Sum."
+  },
+  "Ceiling Function": {
+    "prefix": ["ce", "ceil"],
+    "body": ["\\left\\lceil ${1} \\right\\rceil $0"],
+    "description": "LaTeX Ceiling."
+  },
+  "Floor Function": {
+    "prefix": ["flr", "floor"],
+    "body": ["\\left\\lfloor ${1} \\right\\rfloor $0"],
+    "description": "LaTeX Floor."
+  },
+  "Absolute Value": {
+    "prefix": ["abs"],
+    "body": ["\\lvert ${1} \\rvert $0"],
+    "description": "LaTeX Absolute Value."
+  },
+  "Exponent": {
+    "prefix": ["ex"],
+    "body": ["${1}^{${2}} $0"],
+    "description": "LaTeX Exponent."
+  },
+  "Congruent": {
+    "prefix": ["cmod"],
+    "body": ["${1} \\equiv ${2:residue class} \\pmod{${3:base}} $0"],
+    "description": "LaTeX congruence."
+  },
+  "Subscript": {
+    "prefix": ["su"],
+    "body": ["${1}_{${2}} $0"],
+    "description": "LaTeX Subscript."
+  },
+  "Fraction": {
+    "prefix": ["frac", "fraction"],
+    "body": ["\\frac{${1:numerator}}{${2:denominator}} $0"],
+    "description": "LaTeX Fraction."
+  },
+  "Bracket": {
+    "prefix": ["br"],
+    "body": ["\\left(${1:math}\\right) $0"],
+    "description": "LaTeX Bracket."
+  },
+  "Bracket Rectangular": {
+    "prefix": ["rbr"],
+    "body": ["\\left[${1:math}\\right] $0"],
+    "description": "LaTeX Bracket Rectangular."
+  },
+  "Bracket Squiqqly": {
+    "prefix": ["sbr"],
+    "body": ["\\left\\{${1:math}\\right\\\\} $0"],
+    "description": "LaTeX Bracket Rectangular."
+  },
+  "Text Normal": {
+    "prefix": ["tn"],
+    "body": ["\\textnormal{${1:text}} $0"],
+    "description": "LaTeX Text Normal."
+  },
+  "Text Bold": {
+    "prefix": ["tb"],
+    "body": ["\\textbf{${1:text}} $0"],
+    "description": "LaTeX Text Bold."
+  },
+  "Text Italicized": {
+    "prefix": ["ti"],
+    "body": ["\\textit{${1:text}} $0"],
+    "description": "LaTeX Text Italic."
+  },
+  "Text Underlined": {
+    "prefix": ["tu"],
+    "body": ["\\underline{${1:text}} $0"],
+    "description": "LaTeX Text Underlined."
+  }
+}

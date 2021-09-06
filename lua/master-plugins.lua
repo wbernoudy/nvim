@@ -62,21 +62,37 @@ return require('packer').startup(function(use)
 --  require('plugin-settings.spellsitter-config')
 
   -- colour
+  vim.o.syntax = 'on'
+  vim.o.termguicolors = true
+  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  vim.o.background = "dark" -- or "light" for light mode
+  vim.cmd([[colorscheme gruvbox]])
+
+  --use 'folke/tokyonight.nvim'
+  --vim.cmd[[colorscheme tokyonight]]
+
+  --use 'shaunsingh/nord.nvim'
+  --vim.cmd[[colorscheme nord]]
 
   --use 'sainnhe/gruvbox-material'
   --require('plugin-settings.gruvboxcolor-config')
 
---  use "Pocco81/Catppuccino.nvim"
---  require('plugin-settings.catppuccino-config')
-  --
-  use 'overcache/NeoSolarized'
-  -- Terminal colours
-  vim.o.termguicolors = true
-  vim.g.colors_name = 'NeoSolarized'
+  --use "Pocco81/Catppuccino.nvim"
+  --require('plugin-settings.catppuccino-config')
 
+  --use 'overcache/NeoSolarized'
+  ---- Terminal colours
+  --vim.o.termguicolors = true
+  --vim.g.colors_name = 'NeoSolarized'
 
   --use 'altercation/vim-colors-solarized'
   --require('plugin-settings.solarized-config')
+
+  --use 'romainl/flattened'
+  --vim.cmd[[color flattened_dark]]
+
+  --use 'ishan9299/nvim-solarized-lua'
+  --vim.cmd('colorscheme solarized-flat')
 
   -- status line
   use {'hoob3rt/lualine.nvim',

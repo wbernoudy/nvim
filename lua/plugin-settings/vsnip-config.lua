@@ -9,4 +9,5 @@ vim.cmd[[smap <expr> <C-k>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'    
 vim.cmd[[imap <expr> <C-j> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>']]
 vim.cmd[[smap <expr> <C-j> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>']]
 
--- testing
+-- want a local directory for my snippets
+vim.cmd[[let g:vsnip_snippet_dir = '~/.config/nvim/vsnip/']]
