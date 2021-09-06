@@ -1,10 +1,8 @@
 
 ------ Expand
-vim.cmd[[imap <expr> <space><space>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
-vim.cmd[[smap <expr> <space><space>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
----- Expand or jump
---vim.cmd[[imap <expr> <C-k>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
---vim.cmd[[smap <expr> <C-k>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']]
+vim.cmd[[imap <expr> <C-h> vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
+vim.cmd[[smap <expr> <C-h> vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>']]
+--
 ---- Jump forward or backward
 vim.cmd[[imap <expr> <C-k>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]
 vim.cmd[[smap <expr> <C-k>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]

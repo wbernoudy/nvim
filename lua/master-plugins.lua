@@ -45,20 +45,6 @@ return require('packer').startup(function(use)
     }
   }
   require('plugin-settings.cmp-config')
-  --
-  --
-  --use { 'ms-jpq/coq_nvim', branch = 'coq'} -- main one
-  ----use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
-  --require('plugin-settings.coq-config')
-
-  --use 'nvim-lua/completion-nvim'
-  --require('plugin-settings.nvim-completion-config')
-  ---- buffer completion
-  --use 'steelsojka/completion-buffers'
-  --use 'hrsh7th/nvim-compe'
-  --require('plugin-settings.compe-config')
-  -- add pictograms to completion
-  --use 'onsails/lspkind-nvim'
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
@@ -76,12 +62,18 @@ return require('packer').startup(function(use)
 --  require('plugin-settings.spellsitter-config')
 
   -- colour
-  use "Pocco81/Catppuccino.nvim"
-  require('plugin-settings.catppuccino-config')
-  --use 'overcache/NeoSolarized'
-  ---- Terminal colours
-  --vim.o.termguicolors = true
-  --vim.g.colors_name = 'NeoSolarized'
+
+  --use 'sainnhe/gruvbox-material'
+  --require('plugin-settings.gruvboxcolor-config')
+
+--  use "Pocco81/Catppuccino.nvim"
+--  require('plugin-settings.catppuccino-config')
+  --
+  use 'overcache/NeoSolarized'
+  -- Terminal colours
+  vim.o.termguicolors = true
+  vim.g.colors_name = 'NeoSolarized'
+
 
   --use 'altercation/vim-colors-solarized'
   --require('plugin-settings.solarized-config')
@@ -91,14 +83,22 @@ return require('packer').startup(function(use)
   requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   require('plugin-settings.lualine-config')
 
-  -- icons
-  use 'kyazdani42/nvim-web-devicons'
-
   -- telescope
   use {'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   require('plugin-settings.telescope-config')
+
+  -- motion
+  use 'ggandor/lightspeed.nvim'
+  require('plugin-settings.lightspeed-config')
+
+  -- file explorer
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons'
+  }
+  require('plugin-settings.nvimtree-config')
 
 
   -- folding

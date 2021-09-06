@@ -69,9 +69,9 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["Catppuccino.nvim"] = {
+  NeoSolarized = {
     loaded = true,
-    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/Catppuccino.nvim"
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/NeoSolarized"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -105,6 +105,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
+  ["lightspeed.nvim"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lightspeed.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
@@ -124,6 +128,10 @@ _G.packer_plugins = {
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
