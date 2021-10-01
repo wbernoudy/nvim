@@ -7,6 +7,5 @@ require('lsp.python-lsp')
 require('lsp.latex-lsp')
 require('lsp.bash-lsp')
 require('lsp.lua-lsp')
-require('lsp.json-lsp')
 
 
