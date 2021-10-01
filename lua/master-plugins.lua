@@ -112,7 +112,8 @@ return require('packer').startup(function(use)
   -- file explorer
   use {
       'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons'
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function() require'nvim-tree'.setup {} end
   }
   require('plugin-settings.nvimtree-config')
 

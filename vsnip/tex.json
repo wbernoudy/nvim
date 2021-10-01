@@ -84,6 +84,11 @@
     "body": ["\\left\\{${1:math}\\right\\\\} $0"],
     "description": "LaTeX Bracket Rectangular."
   },
+  "Norm of vector": {
+    "prefix": ["norm"],
+    "body": ["\\left\\lVert ${1:math}\\right\\rVert $0"],
+    "description": "LaTeX Norm."
+  },
   "Text Normal": {
     "prefix": ["tn"],
     "body": ["\\textnormal{${1:text}} $0"],
@@ -103,5 +108,34 @@
     "prefix": ["tu"],
     "body": ["\\underline{${1:text}} $0"],
     "description": "LaTeX Text Underlined."
+  },
+  "TikzPicture": {
+    "prefix": ["tikz"],
+    "body": ["\\begin{tikzpicture}", 
+                "$0",
+                "\\end{tikzpicture}"
+    ],
+    "description": "LaTeX TikzPicture."
+  },
+  "Tikz labelled node": {
+    "prefix": ["lnode"],
+    "body": ["\\node[${1:options}] (${2:label}) at (${3:placement}) {$2};",
+	    "$0"
+    ],
+    "description": "LaTeX TikzPicture labelled node."
+  },
+  "Tikz node": {
+    "prefix": ["node"],
+    "body": ["\\node[${1:options}] at (${3:placement}) {};",
+	    "$0"
+    ],
+    "description": "LaTeX TikzPicture node."
+  },
+  "Tikz edge": {
+    "prefix": ["edge"],
+    "body": ["\\path[${1:options}] (${2:placement}) edge (${3:placement});",
+	    "$0"
+    ],
+    "description": "LaTeX TikzPicture edge."
   }
 }

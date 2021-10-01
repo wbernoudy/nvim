@@ -8,7 +8,7 @@ require'lightspeed'.setup {
   match_only_the_start_of_same_char_seqs = true,
   limit_ft_matches = 5,
   -- I do not like x mode!
-  x_mode_prefix_key = '<c-1>',
+  x_mode_prefix_key = '<c-a>',
   -- For instant-repeat, pressing the trigger key again (f/F/t/T)
   -- always works, but here you can specify additional keys too.
   instant_repeat_fwd_key = nil,
