@@ -1,4 +1,3 @@
-
 require('lspkind').init({
     -- enables text annotations
     --
@@ -54,7 +53,7 @@ cmp.setup {
 mapping = {
   ['<CR>'] = cmp.mapping.confirm({
     behavior = cmp.ConfirmBehavior.Replace,
-    select = true,
+    select = false,
   }),
   ['BS'] = cmp.mapping.abort(),
   ['<TAB>'] = cmp.mapping.select_next_item(),
@@ -68,7 +67,8 @@ mapping = {
     { name = 'buffer' },
     { name = 'calc' },
     { name = 'latex_symbols' },
-    { name = 'spell' },
+    { name = 'omni' },
+--    { name = 'spell' },
   },
 formatting = {
   format = function(entry, vim_item)
@@ -79,8 +79,7 @@ formatting = {
     vim_item.menu = ({
       buffer = "[Buffer]",
       nvim_lsp = "[LSP]",
-      nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]",
+      latex_symbols = "[TEX]",
     })[entry.source.name]
     return vim_item
   end,
@@ -91,3 +90,8 @@ formatting = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+
+  -- Setup lspconfig.
+--  require('lspconfig')[lspintall].setup {
+--    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+--  }
