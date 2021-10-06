@@ -10,6 +10,7 @@ local function setup_servers()
   local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
     lspconfig[server].setup{
+        -- if no cmp then just remove this
     capabilities = capabilities}
   end
 end
@@ -21,6 +22,7 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
+-- add vim as a global variable so I do not get flags everywhere saying it is not
 lspconfig.lua.setup{
     settings = {
         Lua = {
