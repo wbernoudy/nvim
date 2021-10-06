@@ -38,14 +38,3 @@ cmp.setup {
     })}),
   },
 }
-
-lspkind.init({
-    -- enables text annotations
-    with_text = true,
-    -- default symbol map
-    -- can be either 'default' (requires nerd-fonts font) or
-    -- 'codicons' for codicon preset (requires vscode-codicons font)
-    preset = 'default',
-
-})
-

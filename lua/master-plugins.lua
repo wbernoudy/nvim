@@ -23,8 +23,6 @@ return require('packer').startup(function(use)
 
   -- package manager for the language servers
   -- remember, after using :LspInstall <language> to add the appropriate config file under
-  -- .config/nvim/lua/lsp/language-lsp.lua and include require'lspconfig'.<language>.setup{}
-  -- then add require('lsp/<language>')
   use 'kabouzeid/nvim-lspinstall'
   require('plugin-settings.lspinstall-config')
 
