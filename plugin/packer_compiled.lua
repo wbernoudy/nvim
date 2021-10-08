@@ -162,6 +162,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+  },
   vimtex = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/vimtex"

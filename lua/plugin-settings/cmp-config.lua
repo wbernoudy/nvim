@@ -1,6 +1,7 @@
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
+--vim.cmd[[set completeopt=menu,menuone,noselect]]
 cmp.setup {
   -- load vsnip
   snippet = {
@@ -8,13 +9,38 @@ cmp.setup {
         vim.fn['vsnip#anonymous'](args.body)
     end
   },
-  -- define k-mappings for completion
+  -- define mappings for completion
   mapping = {
-  ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace,select = false}),
-  ['BS'] = cmp.mapping.abort(),
-  ['<TAB>'] = cmp.mapping.select_next_item(),
-  ['<S-TAB>'] = cmp.mapping.select_prev_item()
-  },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()--{behavior = cmp.SelectBehavior.Select, select = true})
+      else
+        fallback()
+      end
+    end,
+    ['<Down>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()--{behavior = cmp.SelectBehavior.Select, select = true})
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()--{behavior = cmp.SelectBehavior.Select, select = true})
+      else
+        fallback()
+      end
+    end,
+    ['<Up>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()--{behavior = cmp.SelectBehavior.Select, select = true})
+      else
+        fallback()
+      end
+    end,
+   ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = false}),
+   },
   -- add ons for cmp
   -- https://github.com/topics/nvim-cmp
   sources = {
@@ -30,11 +56,12 @@ cmp.setup {
   },
   formatting = {
     -- formatting of the names in the completion menu
-    format = lspkind.cmp_format({with_text = true, menu = ({
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50}),
+      buffer = "[Buf]",
+      nvim_lsp = "[Lsp]",
       nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]"
-    })}),
+      latex_symbols = "[Tex]",
+      vsnip = "[Snip]"
   },
 }
+

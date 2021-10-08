@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- PLUGINS
+  -- PLUGINS --
 
   -- latex
   use 'lervag/vimtex'
@@ -50,11 +50,8 @@ return require('packer').startup(function(use)
   require('plugin-settings.vsnip-config')
 
   -- colour
-  vim.o.syntax = 'on'
-  vim.o.termguicolors = true
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-  vim.o.background = "dark" -- or "light" for light mode
-  vim.cmd([[colorscheme gruvbox]])
+  require('plugin-settings.gruvboxcolor-config')
 
   -- status line
   use {'hoob3rt/lualine.nvim',
@@ -123,5 +120,4 @@ return require('packer').startup(function(use)
 --imap <tab> <Plug>(completion_smart_tab)
 --imap <s-tab> <Plug>(completion_smart_s_tab)
 --  ]]
-
 
