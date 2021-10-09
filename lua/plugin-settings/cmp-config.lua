@@ -34,7 +34,7 @@ cmp.setup {
     end,
     ['<Up>'] = function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()--{behavior = cmp.SelectBehavior.Select, select = true})
+        cmp.select_prev_item()--{behavior = cmp.SelectBehavior.Select, select = true})
       else
         fallback()
       end
@@ -54,14 +54,19 @@ cmp.setup {
 --    spell really slows down the completion
 --    { name = 'spell' },
   },
-  formatting = {
-    -- formatting of the names in the completion menu
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50}),
-      buffer = "[Buf]",
-      nvim_lsp = "[Lsp]",
+formatting = {
+  format = require("lspkind").cmp_format({with_text = true, menu = ({
+-- this does not seem to be working but I will keep it here for now in case they fix the problem upstream
+      buffer = "[Buffer]",
+      nvim_lsp = "[LSP]",
+      luasnip = "[LuaSnip]",
       nvim_lua = "[Lua]",
-      latex_symbols = "[Tex]",
-      vsnip = "[Snip]"
-  },
+      latex_symbols = "[Latex]",
+    })}),
+},
 }
+-- this is a hack to fix until I can integrate this with gruvbox better
+vim.cmd[[hi CmpItemMenu ctermfg=White]]
+
+
 
