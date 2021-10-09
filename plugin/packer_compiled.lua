@@ -105,6 +105,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/friendly-snippets"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/Users/aaronslobodin/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"

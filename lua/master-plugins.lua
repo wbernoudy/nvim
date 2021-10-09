@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
   require('plugin-settings.vsnip-config')
 
   -- colour

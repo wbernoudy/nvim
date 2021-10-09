@@ -48,7 +48,7 @@ cmp.setup {
     { name = 'nvim_lua' },
     { name = 'vsnip' },
     { name = 'path' },
-    { name = 'buffer' },
+    --{ name = 'buffer' },
     { name = 'calc' },
     { name = 'latex_symbols' },
 --    spell really slows down the completion
@@ -57,11 +57,12 @@ cmp.setup {
 formatting = {
   format = require("lspkind").cmp_format({with_text = true, menu = ({
 -- this does not seem to be working but I will keep it here for now in case they fix the problem upstream
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
-      luasnip = "[LuaSnip]",
+      buffer = "[Buf]",
+      path = "[Path]",
+      nvim_lsp = "[Lsp]",
       nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]",
+      latex_symbols = "[Tex]",
+      vsnip = "[Vsnip]"
     })}),
 },
 }
