@@ -69,6 +69,16 @@
     "body": ["\\frac{${1:numerator}}{${2:denominator}} $0"],
     "description": "LaTeX Fraction."
   },
+  "binomial": {
+    "prefix": ["binom", "bin"],
+    "body": ["\\binom{${1}}{${2}} $0"],
+    "description": "LaTeX binomial."
+  },
+  "Inner Product": {
+    "prefix": ["ip"],
+    "body": ["\\left\\langle ${1} \\right\\rangle$0"],
+    "description": "LaTeX inner product."
+  },
   "Bracket": {
     "prefix": ["br"],
     "body": ["\\left(${1:math}\\right) $0"],
@@ -108,6 +118,16 @@
     "prefix": ["tu"],
     "body": ["\\underline{${1:text}} $0"],
     "description": "LaTeX Text Underlined."
+  },
+  "Mathcal Text": {
+    "prefix": ["mc"],
+    "body": ["\\mathcal{${1:text}}$0"],
+    "description": "LaTeX Mathcal."
+  },
+  "Mathbb Text": {
+    "prefix": ["mb"],
+    "body": ["\\mathbb{${1:text}}$0"],
+    "description": "LaTeX Mathbb."
   },
   "TikzPicture": {
     "prefix": ["tikz"],

@@ -48,7 +48,7 @@ cmp.setup {
     { name = 'nvim_lua' },
     { name = 'vsnip' },
     { name = 'path' },
-    --{ name = 'buffer' },
+    { name = 'buffer' },
     { name = 'calc' },
     { name = 'latex_symbols' },
 --    spell really slows down the completion
@@ -68,6 +68,7 @@ formatting = {
 }
 -- this is a hack to fix until I can integrate this with gruvbox better
 vim.cmd[[hi CmpItemMenu ctermfg=White]]
+
 
 
 

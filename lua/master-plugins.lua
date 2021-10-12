@@ -1,6 +1,5 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -17,14 +16,6 @@ return require('packer').startup(function(use)
   -- latex
   use 'lervag/vimtex'
   require('plugin-settings.vimtex-config')
-
-  -- language server protocol
-  use 'neovim/nvim-lspconfig'
-
-  -- package manager for the language servers
-  -- remember, after using :LspInstall <language> to add the appropriate config file under
-  use 'kabouzeid/nvim-lspinstall'
-  require('plugin-settings.lspinstall-config')
 
  --completion
  --Install nvim-cmp, and buffer source as a dependency
@@ -44,6 +35,14 @@ return require('packer').startup(function(use)
     }
   }
   require('plugin-settings.cmp-config')
+
+  -- language server protocol
+  use 'neovim/nvim-lspconfig'
+
+  -- package manager for the language servers
+  -- remember, after using :LspInstall <language> to add the appropriate config file under
+  use 'kabouzeid/nvim-lspinstall'
+  require('plugin-settings.lspinstall-config')
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
