@@ -41,12 +41,16 @@ return require('packer').startup(function(use)
 
   -- package manager for the language servers
   -- remember, after using :LspInstall <language> to add the appropriate config file under
-  use 'kabouzeid/nvim-lspinstall'
-  require('plugin-settings.lspinstall-config')
+  use 'williamboman/nvim-lsp-installer'
+  require('plugin-settings/nvim-lsp-installer-config')
+
+
+  --use 'kabouzeid/nvim-lspinstall'
+  --require('plugin-settings.lspinstall-config')
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
-  use 'rafamadriz/friendly-snippets'
+  --use 'rafamadriz/friendly-snippets'
   require('plugin-settings.vsnip-config')
 
   -- colour

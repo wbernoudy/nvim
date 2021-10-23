@@ -1,7 +1,6 @@
 local cmp = require 'cmp'
-local lspkind = require('lspkind')
+--local lspkind = require('lspkind')
 
---vim.cmd[[set completeopt=menu,menuone,noselect]]
 cmp.setup {
   -- load vsnip
   snippet = {
@@ -43,32 +42,36 @@ cmp.setup {
    },
   -- add ons for cmp
   -- https://github.com/topics/nvim-cmp
-  sources = {
+  -- put the sources in preferred order
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
     { name = 'vsnip' },
+    { name = 'buffer', keyword_length = 4},
     { name = 'path' },
-    { name = 'buffer' },
-    { name = 'calc' },
     { name = 'latex_symbols' },
+    { name = 'nvim_lua' },
+    { name = 'calc' },
 --    spell really slows down the completion
 --    { name = 'spell' },
+  }),
+  formatting = {
+    format = require("lspkind").cmp_format({with_text = true, menu = ({
+        buffer = "[Buf]",
+        path = "[Path]",
+        nvim_lsp = "[Lsp]",
+        nvim_lua = "[Lua]",
+        latex_symbols = "[Tex]",
+        vsnip = "[Vsnip]"
+      })}),
   },
-formatting = {
-  format = require("lspkind").cmp_format({with_text = true, menu = ({
--- this does not seem to be working but I will keep it here for now in case they fix the problem upstream
-      buffer = "[Buf]",
-      path = "[Path]",
-      nvim_lsp = "[Lsp]",
-      nvim_lua = "[Lua]",
-      latex_symbols = "[Tex]",
-      vsnip = "[Vsnip]"
-    })}),
-},
+  --experimental = {
+  --    native_menu = false,
+  --    ghost_text = false
+  --}
 }
--- this is a hack to fix until I can integrate this with gruvbox better
-vim.cmd[[hi CmpItemMenu ctermfg=White]]
 
+-- this is a hack to fix until I can integrate this with gruvbox better
+--vim.cmd[[hi CmpItemMenu ctermfg=White]]
 
 
 
