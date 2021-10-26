@@ -129,6 +129,11 @@
     "body": ["\\mathbb{${1:text}}$0"],
     "description": "LaTeX Mathbb."
   },
+  "Graphic": {
+    "prefix": ["incgrah"],
+    "body": ["\\includegraphics[scale = ${1:scale}]{${2:path}} $0"],
+    "description": "LaTeX graphic."
+  },
   "TikzPicture": {
     "prefix": ["tikz"],
     "body": ["\\begin{tikzpicture}", 
