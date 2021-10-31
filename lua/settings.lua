@@ -12,16 +12,21 @@ vim.bo.shiftwidth = 4
 vim.bo.softtabstop = 4
 
 -- hybrid of relative number line and true number line
-vim.wo.relativenumber = true
-vim.wo.number = true
+-- removing these makes nvim faster
+vim.wo.relativenumber = false
+vim.wo.number = false
 
 -- Cursor line
-vim.wo.cursorline = true
+-- removing the cursorline makes nvim faster
+vim.wo.cursorline = false
 
 -- start at the same point in the file as before
 vim.cmd[[autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
 
-vim.o.smartcase = true
+vim.o.smartcase = false
+
+-- does this make things faster
+vim.o.showmatch = false
 
 -- spell checking
 vim.o.spell = true

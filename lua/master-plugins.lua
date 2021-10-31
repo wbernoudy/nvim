@@ -44,10 +44,6 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   require('plugin-settings/nvim-lsp-installer-config')
 
-
-  --use 'kabouzeid/nvim-lspinstall'
-  --require('plugin-settings.lspinstall-config')
-
   -- snippets
   use 'hrsh7th/vim-vsnip'
   --use 'rafamadriz/friendly-snippets'

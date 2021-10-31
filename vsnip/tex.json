@@ -2,7 +2,7 @@
   "Environment": {
     "prefix": ["en"],
     "body": ["\\begin{${1}}", 
-                "${2:text}",
+                "${2}",
                 "\\end{$1}",
                 "$0"
     ],
@@ -12,7 +12,7 @@
     "prefix": ["eq"],
     "body": ["\\begin{${1|equation,equation*|}}", 
                 "\\begin{aligned}",
-                "${2:math}",
+                "${2}",
                 "\\end{aligned}",
                 "\\end{$1}",
                 "$0"
@@ -50,13 +50,13 @@
     "description": "LaTeX Absolute Value."
   },
   "Exponent": {
-    "prefix": ["ex"],
-    "body": ["${1}^{${2}} $0"],
+    "prefix": ["e"],
+    "body": ["^{${1}} $0"],
     "description": "LaTeX Exponent."
   },
   "Congruent": {
     "prefix": ["cmod"],
-    "body": ["${1} \\equiv ${2:residue class} \\pmod{${3:base}} $0"],
+    "body": ["${1} \\equiv ${2} \\pmod{${3:base}} $0"],
     "description": "LaTeX congruence."
   },
   "Subscript": {
@@ -66,7 +66,7 @@
   },
   "Fraction": {
     "prefix": ["frac", "fraction"],
-    "body": ["\\frac{${1:numerator}}{${2:denominator}} $0"],
+    "body": ["\\frac{${1}}{${2}} $0"],
     "description": "LaTeX Fraction."
   },
   "binomial": {
@@ -81,52 +81,52 @@
   },
   "Bracket": {
     "prefix": ["br"],
-    "body": ["\\left(${1:math}\\right) $0"],
+    "body": ["\\left(${1}\\right) $0"],
     "description": "LaTeX Bracket."
   },
   "Bracket Rectangular": {
     "prefix": ["rbr"],
-    "body": ["\\left[${1:math}\\right] $0"],
+    "body": ["\\left[${1}\\right] $0"],
     "description": "LaTeX Bracket Rectangular."
   },
   "Bracket Squiqqly": {
     "prefix": ["sbr"],
-    "body": ["\\left\\{${1:math}\\right\\\\} $0"],
+    "body": ["\\left\\{${1}\\right\\\\} $0"],
     "description": "LaTeX Bracket Rectangular."
   },
   "Norm of vector": {
     "prefix": ["norm"],
-    "body": ["\\left\\lVert ${1:math}\\right\\rVert $0"],
+    "body": ["\\left\\lVert ${1}\\right\\rVert $0"],
     "description": "LaTeX Norm."
   },
   "Text Normal": {
     "prefix": ["tn"],
-    "body": ["\\textnormal{${1:text}} $0"],
+    "body": ["\\textnormal{${1}} $0"],
     "description": "LaTeX Text Normal."
   },
   "Text Bold": {
     "prefix": ["tb"],
-    "body": ["\\textbf{${1:text}} $0"],
+    "body": ["\\textbf{${1}} $0"],
     "description": "LaTeX Text Bold."
   },
   "Text Italicized": {
     "prefix": ["ti"],
-    "body": ["\\textit{${1:text}} $0"],
+    "body": ["\\textit{${1}} $0"],
     "description": "LaTeX Text Italic."
   },
   "Text Underlined": {
     "prefix": ["tu"],
-    "body": ["\\underline{${1:text}} $0"],
+    "body": ["\\underline{${1}} $0"],
     "description": "LaTeX Text Underlined."
   },
   "Mathcal Text": {
     "prefix": ["mc"],
-    "body": ["\\mathcal{${1:text}}$0"],
+    "body": ["\\mathcal{${1}}$0"],
     "description": "LaTeX Mathcal."
   },
   "Mathbb Text": {
     "prefix": ["mb"],
-    "body": ["\\mathbb{${1:text}}$0"],
+    "body": ["\\mathbb{${1}}$0"],
     "description": "LaTeX Mathbb."
   },
   "Graphic": {
