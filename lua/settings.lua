@@ -9,7 +9,7 @@ vim.o.mouse='a'
 -- Tabbing behavior
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
-vim.bo.softtabstop = 4
+--vim.bo.softtabstop = 4
 
 -- hybrid of relative number line and true number line
 -- removing these makes nvim faster
@@ -29,7 +29,7 @@ vim.o.smartcase = false
 vim.o.showmatch = false
 
 -- spell checking
-vim.o.spell = true
+--vim.o.spell = true
 vim.o.spelllang = 'en_ca'
 
 -- scrolling options
