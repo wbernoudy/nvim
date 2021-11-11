@@ -1,3 +1,5 @@
+This is my nvim setup which has been optimized for LaTeX. There is a lot of functionality here. I will be adding a details how-to-guide soon. Until then, you can begin by downloading the following then cloning my repo into your ~/.config/nvim directory.
+
 You will need to download nvim 0.5.
 
 https://github.com/neovim/neovim
