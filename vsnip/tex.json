@@ -34,6 +34,21 @@
     "body": ["\\sum_{${1} = ${2}}^{${3}} $0"],
     "description": "LaTex Sum."
   },
+  "Product": {
+    "prefix": ["pr"],
+    "body": ["\\prod_{${1} = ${2}}^{${3}} $0"],
+    "description": "LaTex Product."
+  },
+  "Union": {
+    "prefix": ["cu"],
+    "body": ["\\cup_{${1} = ${2}}^{${3}} $0"],
+    "description": "LaTex Cup."
+  },
+  "Intersection": {
+    "prefix": ["ca"],
+    "body": ["\\cap{${1} = ${2}}^{${3}} $0"],
+    "description": "LaTex Cap."
+  },
   "Ceiling Function": {
     "prefix": ["ce", "ceil"],
     "body": ["\\left\\lceil ${1} \\right\\rceil $0"],
@@ -56,7 +71,7 @@
   },
   "Congruent": {
     "prefix": ["cmod"],
-    "body": ["${1} \\equiv ${2} \\pmod{${3:base}} $0"],
+    "body": ["\\equiv ${1} \\pmod{${2}} $0"],
     "description": "LaTeX congruence."
   },
   "Subscript": {
@@ -65,12 +80,12 @@
     "description": "LaTeX Subscript."
   },
   "Fraction": {
-    "prefix": ["frac", "fraction"],
+    "prefix": ["fr"],
     "body": ["\\frac{${1}}{${2}} $0"],
     "description": "LaTeX Fraction."
   },
   "binomial": {
-    "prefix": ["binom", "bin"],
+    "prefix": ["bin"],
     "body": ["\\binom{${1}}{${2}} $0"],
     "description": "LaTeX binomial."
   },
@@ -95,7 +110,7 @@
     "description": "LaTeX Bracket Rectangular."
   },
   "Norm of vector": {
-    "prefix": ["norm"],
+    "prefix": ["nor"],
     "body": ["\\left\\lVert ${1}\\right\\rVert $0"],
     "description": "LaTeX Norm."
   },
