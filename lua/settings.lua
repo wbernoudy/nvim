@@ -29,7 +29,7 @@ vim.o.smartcase = false
 vim.o.showmatch = false
 
 -- spell checking
---vim.o.spell = true
+vim.o.spell = true
 vim.o.spelllang = 'en_ca'
 
 -- scrolling options

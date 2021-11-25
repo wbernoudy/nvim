@@ -44,14 +44,13 @@ cmp.setup {
   -- https://github.com/topics/nvim-cmp
   -- put the sources in preferred order
   sources = cmp.config.sources({
-    { name = 'buffer', max_item_count = 5, opts = { keyword_length = 6} },
-    { name = 'nvim_lsp'},--, max_item_count = 5},
+    { name = 'buffer', option = { max_item_count = 5, keyword_length = 6} },
     { name = 'vsnip'},
-    { name = 'path' },
-    { name = 'latex_symbols'},
-    { name = 'nvim_lua' },
-    { name = 'calc' },
---    spell really slows down the completion
+    { name = 'nvim_lsp', option = {max_item_count = 5}},
+    { name = 'latex_symbols', option = { max_item_count = 5}},
+--    { name = 'nvim_lua'},
+--    { name = 'path'},
+--    { name = 'calc', option = {opts = {keyword_length = 3}}},
 --    { name = 'spell' },
   }),
   formatting = {

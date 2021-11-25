@@ -129,6 +129,19 @@
     "body": ["\\textit{${1}} $0"],
     "description": "LaTeX Text Italic."
   },
+  "Text Coloured": {
+    "prefix": ["tc"],
+    "body": ["\\textcolor{${1:col}}{${2:text}} $0"],
+    "description": "LaTeX Text Colour."
+  },
+  "Text Spoken": {
+    "prefix": ["ts"],
+    "body": ["[\\textcolor{WildStrawberry}{Spoken:${1}}] $0"]
+  },
+  "Text Discussion": {
+    "prefix": ["td"],
+    "body": ["[\\textcolor{BlueViolet}{Spoken:${1}}] $0"]
+  },
   "Text Underlined": {
     "prefix": ["tu"],
     "body": ["\\underline{${1}} $0"],

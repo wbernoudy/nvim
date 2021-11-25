@@ -18,6 +18,18 @@ return require('packer').startup(function(use)
   require('plugin-settings.vimtex-config')
 
  --completion
+--  use 'ms-jpq/coq_nvim'
+--  use 'ms-jpq/coq.thirdparty'
+--  require("coq_3p") {
+--  { src = "nvimlua", short_name = "nLUA" },
+--  { src = "vimtex", short_name = "vTEX" },
+--  { src = "bc", short_name = "MATH", precision = 6 }
+--}
+--  vim.g.coq_settings = {
+--    auto_start = 'shut-up',
+--  }
+--
+
  --Install nvim-cmp, and buffer source as a dependency
   use {
     "hrsh7th/nvim-cmp",
@@ -26,12 +38,12 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
+--      "hrsh7th/cmp-path",
       "hrsh7th/cmp-vsnip",
-      "hrsh7th/cmp-calc",
-      "hrsh7th/cmp-omni",
+--      "hrsh7th/cmp-calc",
+--      "hrsh7th/cmp-omni",
       "kdheepak/cmp-latex-symbols",
-      "f3fora/cmp-spell",
+--      "f3fora/cmp-spell",
     }
   }
   require('plugin-settings.cmp-config')
