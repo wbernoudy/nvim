@@ -44,29 +44,23 @@ cmp.setup {
   -- https://github.com/topics/nvim-cmp
   -- put the sources in preferred order
   sources = cmp.config.sources({
-    { name = 'buffer', option = { max_item_count = 5, keyword_length = 6} },
+    { name = 'buffer', option = {max_item_count = 5, keyword_length = 6} },
     { name = 'vsnip'},
-    { name = 'nvim_lsp', option = {max_item_count = 5}},
-    { name = 'latex_symbols', option = { max_item_count = 5}},
---    { name = 'nvim_lua'},
---    { name = 'path'},
---    { name = 'calc', option = {opts = {keyword_length = 3}}},
---    { name = 'spell' },
+    { name = 'nvim_lsp', option = {max_item_count = 5, keyword_length = 2}},
+    { name = 'latex_symbols', option = {max_item_count = 5, keyword_length = 3}},
   }),
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({
         buffer = "[Buf]",
-        path = "[Path]",
         nvim_lsp = "[Lsp]",
-        nvim_lua = "[Lua]",
         latex_symbols = "[Tex]",
         vsnip = "[Vsnip]"
       })}),
   },
-  --experimental = {
-  --    native_menu = false,
-  --    ghost_text = false
-  --}
+--  experimental = {
+--      native_menu = true,
+--  --    ghost_text = false
+--  }
 }
 
 -- this is a hack to fix until I can integrate this with gruvbox better

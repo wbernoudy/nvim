@@ -18,18 +18,6 @@ return require('packer').startup(function(use)
   require('plugin-settings.vimtex-config')
 
  --completion
---  use 'ms-jpq/coq_nvim'
---  use 'ms-jpq/coq.thirdparty'
---  require("coq_3p") {
---  { src = "nvimlua", short_name = "nLUA" },
---  { src = "vimtex", short_name = "vTEX" },
---  { src = "bc", short_name = "MATH", precision = 6 }
---}
---  vim.g.coq_settings = {
---    auto_start = 'shut-up',
---  }
---
-
  --Install nvim-cmp, and buffer source as a dependency
   use {
     "hrsh7th/nvim-cmp",
@@ -56,25 +44,37 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   require('plugin-settings/nvim-lsp-installer-config')
 
+  -- turn off lsp diagnostics because it is annoying and not needed
+  use'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  require'toggle_lsp_diagnostics'.init({ start_on = false })
+
   -- snippets
   use 'hrsh7th/vim-vsnip'
   --use 'rafamadriz/friendly-snippets'
   require('plugin-settings.vsnip-config')
 
   -- colour
-  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use "morhetz/gruvbox"
   require('plugin-settings.gruvboxcolor-config')
+--  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+
+--  use 'sainnhe/gruvbox-material'
+--  require('plugin-settings.gruvboxcolor-config')
+
 
   -- status line
   use {'hoob3rt/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   require('plugin-settings.lualine-config')
 
-  -- telescope
-  use {'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-  require('plugin-settings.telescope-config')
+  -- folding
+  use {'Konfekt/FastFold'}
+
+---- telescope
+--use {'nvim-telescope/telescope.nvim',
+--  requires = { {'nvim-lua/plenary.nvim'} }
+--}
+--require('plugin-settings.telescope-config')
 
   -- motion
   use 'ggandor/lightspeed.nvim'
@@ -101,20 +101,6 @@ return require('packer').startup(function(use)
 --  use {'lewis6991/spellsitter.nvim'}
 --  require('plugin-settings.spellsitter-config')
 
-
-
-
---  use 'ms-jpq/coq_nvim'
---  use 'ms-jpq/coq.thirdparty'
---require("coq_3p") {
---  { src = "vimtex", short_name = "vTEX" },
---{ src = "bc", short_name = "MATH", precision = 6 }
---}
---vim.g.coq_settings = {
---  auto_start = 'shut-up',
---}
---
-
 --  use 'nvim-lua/completion-nvim'
 --vim.cmd[[autocmd BufEnter * lua require'completion'.on_attach()]]
 --  vim.cmd[[
@@ -133,3 +119,14 @@ return require('packer').startup(function(use)
 --imap <s-tab> <Plug>(completion_smart_s_tab)
 --  ]]
 
+--  use 'ms-jpq/coq_nvim'
+--  use 'ms-jpq/coq.thirdparty'
+--  require("coq_3p") {
+--  { src = "nvimlua", short_name = "nLUA" },
+--  { src = "vimtex", short_name = "vTEX" },
+--  { src = "bc", short_name = "MATH", precision = 6 }
+--}
+--  vim.g.coq_settings = {
+--    auto_start = 'shut-up',
+--  }
+--

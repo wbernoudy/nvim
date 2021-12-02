@@ -35,3 +35,4 @@ vim.o.spelllang = 'en_ca'
 -- scrolling options
 vim.g.scrolloff = 5
 
+

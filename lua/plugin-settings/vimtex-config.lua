@@ -12,6 +12,16 @@ vim.g.vimtex_matchparen_enabled = 0
 
 -- folding
 vim.g.vimtex_fold_enabled = 1
+--vim.g.vimtex_fold_manual = 1
+--vim.cmd[[set fillchars=fold:\ ]]
+vim.g.fastfold_savehook = 1
+vim.cmd[[
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+]]
+vim.cmd[[
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+]]
+
 -- how to fold
 -- zc close fold
 -- zo open fold
