@@ -28,9 +28,9 @@ vim.o.smartcase = false
 -- does this make things faster
 vim.o.showmatch = false
 
--- spell checking
-vim.o.spell = true
-vim.o.spelllang = 'en_ca'
+-- spell checking ## treesitter now manages this
+--vim.o.spell = true
+--vim.o.spelllang = 'en_ca'
 
 -- scrolling options
 vim.g.scrolloff = 5

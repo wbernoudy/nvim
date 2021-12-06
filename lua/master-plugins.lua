@@ -1,3 +1,6 @@
+-- make startup faster
+require('impatient')
+
 local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -18,7 +21,7 @@ return require('packer').startup(function(use)
   require('plugin-settings.vimtex-config')
 
  --completion
- --Install nvim-cmp, and buffer source as a dependency
+ --Install nvim-cmp and sources
   use {
     "hrsh7th/nvim-cmp",
     requires = {
@@ -26,12 +29,8 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-buffer",
---      "hrsh7th/cmp-path",
       "hrsh7th/cmp-vsnip",
---      "hrsh7th/cmp-calc",
---      "hrsh7th/cmp-omni",
       "kdheepak/cmp-latex-symbols",
---      "f3fora/cmp-spell",
     }
   }
   require('plugin-settings.cmp-config')
@@ -44,37 +43,15 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   require('plugin-settings/nvim-lsp-installer-config')
 
-  -- turn off lsp diagnostics because it is annoying and not needed
-  use'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-  require'toggle_lsp_diagnostics'.init({ start_on = false })
-
   -- snippets
   use 'hrsh7th/vim-vsnip'
   --use 'rafamadriz/friendly-snippets'
   require('plugin-settings.vsnip-config')
 
-  -- colour
-  use "morhetz/gruvbox"
-  require('plugin-settings.gruvboxcolor-config')
---  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-
---  use 'sainnhe/gruvbox-material'
---  require('plugin-settings.gruvboxcolor-config')
-
-
   -- status line
   use {'hoob3rt/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   require('plugin-settings.lualine-config')
-
-  -- folding
-  use {'Konfekt/FastFold'}
-
----- telescope
---use {'nvim-telescope/telescope.nvim',
---  requires = { {'nvim-lua/plenary.nvim'} }
---}
---require('plugin-settings.telescope-config')
 
   -- motion
   use 'ggandor/lightspeed.nvim'
@@ -88,18 +65,62 @@ return require('packer').startup(function(use)
   }
   require('plugin-settings.nvimtree-config')
 
+  -- treesitter
+  use {'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+      -- TSInstall <whatever language I want to install>
+  }
+  require'nvim-treesitter.configs'.setup {
+    highlight = {
+      enable = true,
+      custom_captures = {
+        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+        ["foo.bar"] = "Identifier",
+      },
+      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+      -- Using this option may slow down your editor, and you may see some duplicate highlights.
+      -- Instead of true it can also be a list of languages
+      additional_vim_regex_highlighting = false,
+    },
+  }
+
+  -- treesitter spell checker
+  use {
+    'lewis6991/spellsitter.nvim',
+    config = function()
+      require('spellsitter').setup()
+    end
+  }
+
+  --treesitter also folds apparantly
+--vim.cmd[[
+--set foldmethod=expr
+--set foldexpr=nvim_treesitter#foldexpr()
+--]]
+
+  -- Is using a standard Neovim install, i.e. built from source or using a
+  -- provided appimage.
+  use 'lewis6991/impatient.nvim'
+
+  -- colour
+  use 'ajmwagar/vim-deus'
+  vim.cmd[[set termguicolors]]
+  vim.cmd[[colorscheme deus]]
+
+-- colour
+---use 'sainnhe/gruvbox-material'
+---require('plugin-settings.gruvboxcolor-config')
+
   end)
 
-  -- treesitter
---  use {'nvim-treesitter/nvim-treesitter',
---      run = ':TSUpdate'
---      -- TSInstall <whatever language I want to install>
---  }
-  --  require('plugin-settings.treesitter-config')
---  use {'nvim-treesitter/completion-treesitter'}
-  -- spell checker
---  use {'lewis6991/spellsitter.nvim'}
---  require('plugin-settings.spellsitter-config')
+
+-- A bunch of things I have played with but am not currently using
+---- telescope
+--use {'nvim-telescope/telescope.nvim',
+--  requires = { {'nvim-lua/plenary.nvim'} }
+--}
+--require('plugin-settings.telescope-config')
 
 --  use 'nvim-lua/completion-nvim'
 --vim.cmd[[autocmd BufEnter * lua require'completion'.on_attach()]]
@@ -130,3 +151,12 @@ return require('packer').startup(function(use)
 --    auto_start = 'shut-up',
 --  }
 --
+ -- turn off lsp diagnostics because it is annoying and not needed
+--use'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+--require'toggle_lsp_diagnostics'.init({ start_on = false })
+
+--  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+--  use 'sainnhe/gruvbox-material'
+--  require('plugin-settings.gruvboxcolor-config')
+
+
