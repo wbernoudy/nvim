@@ -105,12 +105,12 @@ return require('packer').startup(function(use)
 
   -- colour
   use 'ajmwagar/vim-deus'
+  --use 'sainnhe/gruvbox-material'
+  --use 'EdenEast/nightfox.nvim'
+  --require('github-theme').setup()
   vim.cmd[[set termguicolors]]
   vim.cmd[[colorscheme deus]]
-
--- colour
----use 'sainnhe/gruvbox-material'
----require('plugin-settings.gruvboxcolor-config')
+--  vim.g.deus_termcolors=256
 
   end)
 
