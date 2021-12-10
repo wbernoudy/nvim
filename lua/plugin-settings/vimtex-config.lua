@@ -7,20 +7,17 @@ vim.cmd[[  augroup vimtex_config
 -- set default pdf viewer
 vim.g.vimtex_view_method = 'skim'
 
--- trying to make things faster
-vim.g.vimtex_matchparen_enabled = 0
-
 -- folding
 vim.g.vimtex_fold_enabled = 1
+
+-- trying to make things faster
+--vim.g.vimtex_matchparen_enabled = 0
+
 --vim.g.vimtex_fold_manual = 1
 --vim.cmd[[set fillchars=fold:\ ]]
-vim.g.fastfold_savehook = 1
-vim.cmd[[
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-]]
-vim.cmd[[
-let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
-]]
+--vim.g.fastfold_savehook = 1
+--vim.g.fastfold_fold_command_suffixes = "['x','X','a','A','o','O','c','C']"
+--vim.g.fastfold_fold_movement_commands = "[']z', '[z', 'zj', 'zk']"
 
 -- how to fold
 -- zc close fold
@@ -33,5 +30,12 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 -- quickfix window options
 --vim.cmd[[let g:vimtex_quickfix_ignore_filters = {'overfull' : 0, 'underfull' : 0}]]
+
+--vim.cmd[[
+--let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+--]]
+--vim.cmd[[
+--let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+--]]
 
 

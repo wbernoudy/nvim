@@ -46,8 +46,8 @@ cmp.setup {
   sources = cmp.config.sources({
     { name = 'buffer', option = {max_item_count = 5, keyword_length = 6} },
     { name = 'vsnip'},
-    { name = 'nvim_lsp', option = {max_item_count = 5, keyword_length = 2}},
-    { name = 'latex_symbols', option = {max_item_count = 5, keyword_length = 3}},
+    { name = 'nvim_lsp'},
+    { name = 'latex_symbols'},
   }),
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({
@@ -61,6 +61,7 @@ cmp.setup {
 --      native_menu = true,
 --  --    ghost_text = false
 --  }
+
 }
 
 -- this is a hack to fix until I can integrate this with gruvbox better

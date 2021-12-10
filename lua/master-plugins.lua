@@ -1,5 +1,5 @@
 -- make startup faster
-require('impatient')
+require('impatient').enable_profile()
 
 local execute = vim.api.nvim_command
 local fn = vim.fn
@@ -10,7 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -19,6 +19,8 @@ return require('packer').startup(function(use)
   -- latex
   use 'lervag/vimtex'
   require('plugin-settings.vimtex-config')
+  -- this plugin is indev and I would eventually like it once it is stable
+  -- use 'brymer-meneses/grammar-guard.nvim'
 
  --completion
  --Install nvim-cmp and sources
@@ -45,17 +47,17 @@ return require('packer').startup(function(use)
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
-  --use 'rafamadriz/friendly-snippets'
   require('plugin-settings.vsnip-config')
 
   -- status line
   use {'hoob3rt/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons', opt = true}}
-  require('plugin-settings.lualine-config')
+  require('lualine').setup{}
+  --require('plugin-settings.lualine-config')
 
   -- motion
   use 'ggandor/lightspeed.nvim'
-  require('plugin-settings.lightspeed-config')
+--  require('plugin-settings.lightspeed-config')
 
   -- file explorer
   use {
@@ -74,9 +76,9 @@ return require('packer').startup(function(use)
     highlight = {
       enable = true,
       custom_captures = {
-        -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-        ["foo.bar"] = "Identifier",
-      },
+        -- Highlight the @foo.bar capture group with the "Identifier" highlight group--.
+        ["foo.bar"] = "Identifier",                                                  --
+      },                                                                             --
       -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
       -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
       -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -85,19 +87,14 @@ return require('packer').startup(function(use)
     },
   }
 
-  -- treesitter spell checker
-  use {
-    'lewis6991/spellsitter.nvim',
-    config = function()
-      require('spellsitter').setup()
-    end
-  }
-
   --treesitter also folds apparantly
---vim.cmd[[
---set foldmethod=expr
---set foldexpr=nvim_treesitter#foldexpr()
---]]
+  vim.cmd[[
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+  ]]
+
+  -- benchmarking
+  --use 'dstein64/vim-startuptime'
 
   -- Is using a standard Neovim install, i.e. built from source or using a
   -- provided appimage.
@@ -105,15 +102,17 @@ return require('packer').startup(function(use)
 
   -- colour
   use 'ajmwagar/vim-deus'
-  --use 'sainnhe/gruvbox-material'
-  --use 'EdenEast/nightfox.nvim'
-  --require('github-theme').setup()
   vim.cmd[[set termguicolors]]
   vim.cmd[[colorscheme deus]]
---  vim.g.deus_termcolors=256
 
-  end)
+  end,}
+)
 
+
+
+--use 'sainnhe/gruvbox-material'
+  --use 'EdenEast/nightfox.nvim'
+  --require('github-theme').setup()
 
 -- A bunch of things I have played with but am not currently using
 ---- telescope
