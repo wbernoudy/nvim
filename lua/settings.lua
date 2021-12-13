@@ -14,12 +14,14 @@ vim.bo.shiftwidth = 4
 -- start at the same point in the file as before
 vim.cmd[[autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif]]
 
--- spell checking ## treesitter now manages this
---vim.o.spell = true
---vim.o.spelllang = 'en_ca'
-
 -- scrolling options
 vim.g.scrolloff = 5
 
 -- right most diagnostic column
 vim.o.scl = 'no'
+
+-- spell checking ## treesitter now manages this
+--vim.o.spell = true
+--vim.o.spelllang = 'en_ca'
+
+

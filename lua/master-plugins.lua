@@ -16,14 +16,8 @@ return require('packer').startup({function(use)
 
   -- PLUGINS --
 
-  -- latex
-  use 'lervag/vimtex'
-  require('plugin-settings.vimtex-config')
-  -- this plugin is indev and I would eventually like it once it is stable
-  -- use 'brymer-meneses/grammar-guard.nvim'
-
- --completion
- --Install nvim-cmp and sources
+  --completion
+  --Install nvim-cmp and sources
   use {
     "hrsh7th/nvim-cmp",
     requires = {
@@ -44,6 +38,20 @@ return require('packer').startup({function(use)
   -- remember, after using :LspInstall <language> to add the appropriate config file under
   use 'williamboman/nvim-lsp-installer'
   require('plugin-settings/nvim-lsp-installer-config')
+
+  -- treesitter
+  use {'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+      -- TSInstall <whatever language I want to install>
+  }
+  require('plugin-settings.treesitter-config')
+
+  -- latex
+  use 'lervag/vimtex'
+  require('plugin-settings.vimtex-config')
+  -- this plugin is indev and I would eventually like it once it is stable
+--  use 'brymer-meneses/grammar-guard.nvim'
+--  require("grammar-guard").init()
 
   -- snippets
   use 'hrsh7th/vim-vsnip'
@@ -67,34 +75,7 @@ return require('packer').startup({function(use)
   }
   require('plugin-settings.nvimtree-config')
 
-  -- treesitter
-  use {'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-      -- TSInstall <whatever language I want to install>
-  }
-  require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true,
-      custom_captures = {
-        -- Highlight the @foo.bar capture group with the "Identifier" highlight group--.
-        ["foo.bar"] = "Identifier",                                                  --
-      },                                                                             --
-      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-      -- Using this option may slow down your editor, and you may see some duplicate highlights.
-      -- Instead of true it can also be a list of languages
-      additional_vim_regex_highlighting = false,
-    },
-  }
-
-  --treesitter also folds apparantly
-  vim.cmd[[
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
-  ]]
-
   -- benchmarking
-  --use 'dstein64/vim-startuptime'
 
   -- Is using a standard Neovim install, i.e. built from source or using a
   -- provided appimage.
@@ -102,14 +83,13 @@ return require('packer').startup({function(use)
 
   -- colour
   use 'ajmwagar/vim-deus'
-  vim.cmd[[set termguicolors]]
-  vim.cmd[[colorscheme deus]]
+ require('plugin-settings.deuscolor-config')
 
-  end,}
+  end}
 )
 
 
-
+  --use 'EdenEast/nightfox.nvim'
 --use 'sainnhe/gruvbox-material'
   --use 'EdenEast/nightfox.nvim'
   --require('github-theme').setup()
