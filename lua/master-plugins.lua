@@ -1,6 +1,7 @@
 -- make startup faster
 require('impatient').enable_profile()
 
+local vim = vim
 local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -18,8 +19,7 @@ return require('packer').startup({function(use)
 
   --completion
   --Install nvim-cmp and sources
-  use {
-    "hrsh7th/nvim-cmp",
+  use {'hrsh7th/nvim-cmp',
     requires = {
       "onsails/lspkind-nvim",
       "hrsh7th/cmp-nvim-lsp",
@@ -27,65 +27,95 @@ return require('packer').startup({function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-vsnip",
       "kdheepak/cmp-latex-symbols",
-    }
+    },
+    config = function()
+        require('plugin-settings.cmp-config')
+    end
   }
-  require('plugin-settings.cmp-config')
 
   -- language server protocol
   use 'neovim/nvim-lspconfig'
 
   -- package manager for the language servers
   -- remember, after using :LspInstall <language> to add the appropriate config file under
-  use 'williamboman/nvim-lsp-installer'
-  require('plugin-settings/nvim-lsp-installer-config')
+  use {'williamboman/nvim-lsp-installer',
+    config = function()
+        require('plugin-settings/nvim-lsp-installer-config')
+    end
+  }
 
   -- treesitter
+  -- TSInstall <whatever language I want to install>
   use {'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-      -- TSInstall <whatever language I want to install>
+      run = ':TSUpdate',
+      config = function()
+          require('plugin-settings.treesitter-config')
+      end
   }
-  require('plugin-settings.treesitter-config')
 
   -- latex
-  use 'lervag/vimtex'
-  require('plugin-settings.vimtex-config')
-  -- this plugin is indev and I would eventually like it once it is stable
+  use {'lervag/vimtex',
+      config = function()
+          require('plugin-settings.vimtex-config')
+      end
+  }
+
+-- this plugin is indev and I would eventually like it once it is stable
 --  use 'brymer-meneses/grammar-guard.nvim'
 --  require("grammar-guard").init()
 
   -- snippets
-  use 'hrsh7th/vim-vsnip'
-  require('plugin-settings.vsnip-config')
+  use {'hrsh7th/vim-vsnip',
+      config = function()
+          require('plugin-settings.vsnip-config')
+      end
+  }
 
   -- status line
   use {'hoob3rt/lualine.nvim',
-  requires = {'kyazdani42/nvim-web-devicons', opt = true}}
-  require('lualine').setup{}
-  --require('plugin-settings.lualine-config')
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      config = function()
+          require('lualine').setup{}
+      end
+  }
 
   -- motion
   use 'ggandor/lightspeed.nvim'
---  require('plugin-settings.lightspeed-config')
 
   -- file explorer
   use {
       'kyazdani42/nvim-tree.lua',
       requires = 'kyazdani42/nvim-web-devicons',
-      config = function() require'nvim-tree'.setup {} end
+      config = function()
+          require'nvim-tree'.setup {}
+          require('plugin-settings.nvimtree-config')
+      end
   }
-  require('plugin-settings.nvimtree-config')
 
-  -- benchmarking
-
-  -- Is using a standard Neovim install, i.e. built from source or using a
-  -- provided appimage.
+  -- make startup faster
   use 'lewis6991/impatient.nvim'
 
   -- colour
-  use 'ajmwagar/vim-deus'
- require('plugin-settings.deuscolor-config')
+  use {'ajmwagar/vim-deus',
+      config = function()
+          require('plugin-settings.deuscolor-config')
+      end
+  }
 
-  end}
+  -- benchmarking
+  use 'tweekmonster/startuptime.vim'
+
+  -- the default filetype plugin for nvim is slow, use this one for nvim 0.6 or greater
+  use("nathom/filetype.nvim")
+
+  end,
+
+  -- Move to lua dir so impatient.nvim can cache it
+  config = {
+      compile_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
+
+  }
+}
 )
 
 
