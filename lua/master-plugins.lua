@@ -96,7 +96,8 @@ return require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   -- colour
-  use {'ajmwagar/vim-deus',
+  -- use {'ajmwagar/vim-deus'}
+  use {'theniceboy/nvim-deus',
       config = function()
           require('plugin-settings.deuscolor-config')
       end
