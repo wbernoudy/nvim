@@ -96,6 +96,12 @@ return require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   -- colour
+  -- considering switching colourschemes
+--  use {"rebelot/kanagawa.nvim",
+--      config = function()
+--          require('plugin-settings.kanagawacolor-config')
+--      end
+--  }
   -- use {'ajmwagar/vim-deus'}
   use {'theniceboy/nvim-deus',
       config = function()
@@ -107,7 +113,7 @@ return require('packer').startup({function(use)
   use 'tweekmonster/startuptime.vim'
 
   -- the default filetype plugin for nvim is slow, use this one for nvim 0.6 or greater
-  use("nathom/filetype.nvim")
+  use {"nathom/filetype.nvim"}
 
   end,
 
