@@ -14,9 +14,9 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
---treesitter also folds apparantly
-vim.cmd[[
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-]]
+-- treesitter also folds apparantly
+-- vim.cmd[[
+-- set foldmethod=expr
+-- set foldexpr=nvim_treesitter#foldexpr()
+-- ]]
 

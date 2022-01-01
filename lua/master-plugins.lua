@@ -26,6 +26,7 @@ return require('packer').startup({function(use)
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip-integ",
       "kdheepak/cmp-latex-symbols",
     },
     config = function()
@@ -60,9 +61,9 @@ return require('packer').startup({function(use)
       end
   }
 
--- this plugin is indev and I would eventually like it once it is stable
---  use 'brymer-meneses/grammar-guard.nvim'
---  require("grammar-guard").init()
+  -- this plugin is indev and I would eventually like it once it is stable
+  --  use 'brymer-meneses/grammar-guard.nvim'
+  --  require("grammar-guard").init()
 
   -- snippets
   use {'hrsh7th/vim-vsnip',
@@ -70,6 +71,9 @@ return require('packer').startup({function(use)
           require('plugin-settings.vsnip-config')
       end
   }
+
+  -- snippet repository
+  use "rafamadriz/friendly-snippets"
 
   -- status line
   use {'hoob3rt/lualine.nvim',
@@ -95,25 +99,74 @@ return require('packer').startup({function(use)
   -- make startup faster
   use 'lewis6991/impatient.nvim'
 
-  -- colour
-  -- considering switching colourschemes
---  use {"rebelot/kanagawa.nvim",
---      config = function()
---          require('plugin-settings.kanagawacolor-config')
---      end
---  }
-  -- use {'ajmwagar/vim-deus'}
-  use {'theniceboy/nvim-deus',
-      config = function()
-          require('plugin-settings.deuscolor-config')
-      end
-  }
+  -- colorscheme
+  use "rebelot/kanagawa.nvim"
 
   -- benchmarking
   use 'tweekmonster/startuptime.vim'
 
   -- the default filetype plugin for nvim is slow, use this one for nvim 0.6 or greater
   use {"nathom/filetype.nvim"}
+
+  -- commenting commands
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+
+  -- fuzzy search with fzf
+  use { 'ibhagwan/fzf-lua',
+      -- optional for icon support
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      config = function()
+          require('plugin-settings.fzf-lua-config')
+      end
+  }
+
+  -- see and search clipboard history
+  use {
+      "AckslD/nvim-neoclip.lua",
+      requires = {
+          {'tami5/sqlite.lua', module = 'sqlite'},
+          -- you'll need at least one of these
+          -- {'nvim-telescope/telescope.nvim'},
+          {'ibhagwan/fzf-lua'}
+      },
+      config = function()
+          require('neoclip').setup({
+              default_register = '+',
+          })
+      end,
+  }
+
+  -- quickly navigate errors/warnings
+  use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+          require('plugin-settings.trouble-config')
+      end
+  }
+
+  -- continue to show function signature hint and highlight current argument
+  use {
+      "ray-x/lsp_signature.nvim",
+      config = function()
+          require "lsp_signature".setup()
+      end,
+  }
+
+  -- easily modify matching "surroundings"
+  use {
+      "blackCauldron7/surround.nvim",
+      config = function()
+          require"surround".setup {mappings_style = "surround"}
+      end
+  }
+
+  use {"tpope/vim-fugitive"}
 
   end,
 
@@ -124,55 +177,3 @@ return require('packer').startup({function(use)
   }
 }
 )
-
-
-  --use 'EdenEast/nightfox.nvim'
---use 'sainnhe/gruvbox-material'
-  --use 'EdenEast/nightfox.nvim'
-  --require('github-theme').setup()
-
--- A bunch of things I have played with but am not currently using
----- telescope
---use {'nvim-telescope/telescope.nvim',
---  requires = { {'nvim-lua/plenary.nvim'} }
---}
---require('plugin-settings.telescope-config')
-
---  use 'nvim-lua/completion-nvim'
---vim.cmd[[autocmd BufEnter * lua require'completion'.on_attach()]]
---  vim.cmd[[
---" Use <Tab> and <S-Tab> to navigate through popup menu
---inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
---inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
---
---" Set completeopt to have a better completion experience
---set completeopt=menuone,noinsert,noselect
---
---" Avoid showing message extra message when using completion
---set shortmess+=c
---let g:completion_enable_auto_popup = 1
---let g:completion_enable_snippet = 'vim-vsnip'
---imap <tab> <Plug>(completion_smart_tab)
---imap <s-tab> <Plug>(completion_smart_s_tab)
---  ]]
-
---  use 'ms-jpq/coq_nvim'
---  use 'ms-jpq/coq.thirdparty'
---  require("coq_3p") {
---  { src = "nvimlua", short_name = "nLUA" },
---  { src = "vimtex", short_name = "vTEX" },
---  { src = "bc", short_name = "MATH", precision = 6 }
---}
---  vim.g.coq_settings = {
---    auto_start = 'shut-up',
---  }
---
- -- turn off lsp diagnostics because it is annoying and not needed
---use'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
---require'toggle_lsp_diagnostics'.init({ start_on = false })
-
---  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
---  use 'sainnhe/gruvbox-material'
---  require('plugin-settings.gruvboxcolor-config')
-
-

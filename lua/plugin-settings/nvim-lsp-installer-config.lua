@@ -9,9 +9,9 @@ lsp_installer.on_server_ready(function (server)
         opts.settings = {
             ltex = {
                 -- set the language
-                language = "en-CA",
+                language = "en-US",
                 -- add works to the dictionary here
-                dictionary = { ['en-CA'] = {} },
+                dictionary = { ['en-US'] = {} },
             }
         }
     end

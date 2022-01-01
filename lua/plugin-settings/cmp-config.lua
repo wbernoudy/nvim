@@ -45,19 +45,19 @@ cmp.setup {
     { name = 'buffer', option = {max_item_count = 5, keyword_length = 6}},
     { name = 'vsnip'},
     { name = 'nvim_lsp'},
-    { name = 'latex_symbols'},
+    -- { name = 'latex_symbols'},
   }),
   formatting = {
     format = require("lspkind").cmp_format({with_text = true, menu = ({
         buffer = "[Buf]",
         nvim_lsp = "[Lsp]",
-        latex_symbols = "[Tex]",
+        -- latex_symbols = "[Tex]",
         vsnip = "[Vsnip]"
      })
    }),
   },
---  experimental = {
---      native_menu = true,
---  --    ghost_text = false
---  }
+  experimental = {
+      native_menu = true,
+      -- ghost_text = false
+  }
 }
