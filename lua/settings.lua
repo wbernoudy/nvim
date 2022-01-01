@@ -21,20 +21,27 @@ vim.g.scrolloff = 5
 -- right most diagnostic column
 vim.o.scl = 'no'
 
+-- mostly ignore case when searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- save undo history after close
 vim.opt.undodir = vim.fn.stdpath('data')..'/undo'
 vim.opt.undofile = true
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
 
+-- share default keyboard with the system keyboard
 vim.opt.clipboard = {'unnamed', 'unnamedplus'}
 
+-- line numbers
 vim.opt.number = true
+
+-- show line length ruler
 vim.opt.ruler = true
 vim.opt.colorcolumn = '88'
 
+-- show matching brackets
 vim.o.showmatch = true
 
 vim.cmd("colorscheme kanagawa")

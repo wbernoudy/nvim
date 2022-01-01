@@ -166,6 +166,7 @@ return require('packer').startup({function(use)
       end
   }
 
+  -- git commands
   use {"tpope/vim-fugitive"}
 
   end,
