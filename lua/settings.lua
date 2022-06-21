@@ -38,10 +38,11 @@ vim.opt.clipboard = {'unnamed', 'unnamedplus'}
 vim.opt.number = true
 
 -- show line length ruler
+-- vim.opt.textwidth = 88
 vim.opt.ruler = true
-vim.opt.colorcolumn = '88'
+vim.opt.colorcolumn = "89"
+-- vim.wo.wrap = false
 
--- show matching brackets
-vim.o.showmatch = true
+-- vim.o.showmatch = true
 
 vim.cmd("colorscheme kanagawa")

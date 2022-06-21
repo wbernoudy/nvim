@@ -34,16 +34,26 @@ return require('packer').startup({function(use)
     end
   }
 
-  -- language server protocol
-  use 'neovim/nvim-lspconfig'
+  -- -- language server protocol
+  -- use 'neovim/nvim-lspconfig'
+  --
+  -- -- package manager for the language servers
+  -- -- remember, after using :LspInstall <language> to add the appropriate config file under
+  -- use {'williamboman/nvim-lsp-installer',
+  --   config = function()
+  --       require('plugin-settings.nvim-lsp-installer-config')
+  --   end
+  -- }
 
-  -- package manager for the language servers
-  -- remember, after using :LspInstall <language> to add the appropriate config file under
-  use {'williamboman/nvim-lsp-installer',
-    config = function()
-        require('plugin-settings/nvim-lsp-installer-config')
-    end
-  }
+  use {
+        "williamboman/nvim-lsp-installer",
+        {
+            "neovim/nvim-lspconfig",
+            config = function()
+                require('plugin-settings.nvim-lsp-installer-config')
+            end
+        }
+    }
 
   -- treesitter
   -- TSInstall <whatever language I want to install>
@@ -69,7 +79,8 @@ return require('packer').startup({function(use)
   use {'hrsh7th/vim-vsnip',
       config = function()
           require('plugin-settings.vsnip-config')
-      end
+      end,
+      after = 'nvim-lsp-installer'
   }
 
   -- snippet repository
@@ -151,23 +162,29 @@ return require('packer').startup({function(use)
   }
 
   -- continue to show function signature hint and highlight current argument
-  use {
-      "ray-x/lsp_signature.nvim",
-      config = function()
-          require "lsp_signature".setup()
-      end,
-  }
+  -- use {
+  --     "ray-x/lsp_signature.nvim",
+  --     config = function()
+  --         require "lsp_signature".setup()
+  --     end,
+  -- }
 
   -- easily modify matching "surroundings"
-  use {
-      "blackCauldron7/surround.nvim",
-      config = function()
-          require"surround".setup {mappings_style = "surround"}
-      end
-  }
+  -- use {
+  --     "blackCauldron7/surround.nvim",
+  --     config = function()
+  --         require"surround".setup {mappings_style = "surround"}
+  --     end
+  -- }
 
   -- git commands
   use {"tpope/vim-fugitive"}
+
+  use {"andrewradev/linediff.vim"}
+
+  use {"jeetsukumaran/vim-python-indent-black"}
+
+  use {"kyoh86/vim-ripgrep"}
 
   end,
 

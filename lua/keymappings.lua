@@ -31,3 +31,8 @@ api.nvim_set_keymap('n', '$', 'g$', {noremap = true, silent = true})
 --
 -- explorer
 --vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+-- api.nvim_add_user_command('Ripgrep', ':call ripgrep#search(<q-args>)', {nargs = '+', complete = 'file'})
+
+vim.cmd([[command! -nargs=+ -complete=file Rg :call ripgrep#search(<q-args>)]])
+api.nvim_set_keymap('n', '<C-g>', ':Rg ', { noremap = true })
