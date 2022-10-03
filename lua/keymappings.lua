@@ -26,8 +26,9 @@ api.nvim_set_keymap('n', '$', 'g$', {noremap = true, silent = true})
 --vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv\'', {noremap = true, silent = true})
 --
 -- Tab switch buffer
---vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
---vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-b>', ':bdelete<CR>:bnext<CR>', {noremap = true, silent = true})
 --
 -- explorer
 --vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
