@@ -8,7 +8,7 @@ vim.cmd[[  augroup vimtex_config
 vim.g.vimtex_view_method = 'skim'
 
 -- folding
-vim.g.vimtex_fold_enabled = 1
+vim.g.vimtex_fold_enabled = 0
 
 -- trying to make things faster
 --vim.g.vimtex_matchparen_enabled = 0

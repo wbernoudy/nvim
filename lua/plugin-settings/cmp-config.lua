@@ -45,6 +45,7 @@ cmp.setup {
     { name = 'buffer', option = {max_item_count = 5, keyword_length = 6}},
     { name = 'vsnip'},
     { name = 'nvim_lsp'},
+    { name = 'nvim_lsp_signature_help' },
     -- { name = 'latex_symbols'},
   }),
   formatting = {

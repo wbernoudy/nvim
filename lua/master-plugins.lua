@@ -27,6 +27,7 @@ return require('packer').startup({function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-vsnip",
       "hrsh7th/vim-vsnip-integ",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "kdheepak/cmp-latex-symbols",
     },
     config = function()
@@ -88,7 +89,7 @@ return require('packer').startup({function(use)
 
   -- status line
   use {'hoob3rt/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      requires = {'nvim-tree/nvim-web-devicons', opt = true},
       config = function()
           require('lualine').setup{}
       end
@@ -97,10 +98,12 @@ return require('packer').startup({function(use)
   -- motion
   use 'ggandor/lightspeed.nvim'
 
+  use 'nvim-tree/nvim-web-devicons'
+
   -- file explorer
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-tree.lua',
+      requires = 'nvim-tree/nvim-web-devicons',
       config = function()
           require('nvim-tree').setup({
             actions = {
@@ -117,7 +120,7 @@ return require('packer').startup({function(use)
   use 'lewis6991/impatient.nvim'
 
   -- colorscheme
-  use "rebelot/kanagawa.nvim"
+  use {"rebelot/kanagawa.nvim", commit = "fc2e308"}
 
   -- benchmarking
   use 'tweekmonster/startuptime.vim'
@@ -134,34 +137,34 @@ return require('packer').startup({function(use)
   }
 
   -- fuzzy search with fzf
-  use { 'ibhagwan/fzf-lua',
-      -- optional for icon support
-      requires = { 'kyazdani42/nvim-web-devicons' },
-      config = function()
-          require('plugin-settings.fzf-lua-config')
-      end
-  }
+  -- use { 'ibhagwan/fzf-lua',
+  --     -- optional for icon support
+  --     requires = { 'nvim-tree/nvim-web-devicons' },
+  --     config = function()
+  --         require('plugin-settings.fzf-lua-config')
+  --     end
+  -- }
 
   -- see and search clipboard history
-  use {
-      "AckslD/nvim-neoclip.lua",
-      requires = {
-          {'tami5/sqlite.lua', module = 'sqlite'},
-          -- you'll need at least one of these
-          -- {'nvim-telescope/telescope.nvim'},
-          {'ibhagwan/fzf-lua'}
-      },
-      config = function()
-          require('neoclip').setup({
-              default_register = '+',
-          })
-      end,
-  }
+  -- use {
+  --     "AckslD/nvim-neoclip.lua",
+  --     requires = {
+  --         {'tami5/sqlite.lua', module = 'sqlite'},
+  --         -- you'll need at least one of these
+  --         -- {'nvim-telescope/telescope.nvim'},
+  --         {'ibhagwan/fzf-lua'}
+  --     },
+  --     config = function()
+  --         require('neoclip').setup({
+  --             default_register = '+',
+  --         })
+  --     end,
+  -- }
 
   -- quickly navigate errors/warnings
   use {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      requires = "nvim-tree/nvim-web-devicons",
       config = function()
           require('plugin-settings.trouble-config')
       end
@@ -191,6 +194,10 @@ return require('packer').startup({function(use)
   use {"jeetsukumaran/vim-python-indent-black"}
 
   use {"kyoh86/vim-ripgrep"}
+
+  use {"inkarkat/vim-ReplaceWithRegister"}
+
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   end,
 
