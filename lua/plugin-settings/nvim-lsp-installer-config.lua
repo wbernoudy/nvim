@@ -47,5 +47,5 @@ require('lspconfig').clangd.setup {
     }
 }
 
-require('lspconfig').julials.setup {
-}
+-- require('lspconfig').julials.setup {
+-- }

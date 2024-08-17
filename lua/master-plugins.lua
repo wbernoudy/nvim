@@ -1,5 +1,5 @@
 -- make startup faster
-require('impatient').enable_profile()
+--require('impatient').enable_profile()
 
 local vim = vim
 local execute = vim.api.nvim_command
@@ -28,7 +28,7 @@ return require('packer').startup({function(use)
       "hrsh7th/cmp-vsnip",
       "hrsh7th/vim-vsnip-integ",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      "kdheepak/cmp-latex-symbols",
+      -- "kdheepak/cmp-latex-symbols",
     },
     config = function()
         require('plugin-settings.cmp-config')
@@ -66,11 +66,11 @@ return require('packer').startup({function(use)
   }
 
   -- latex
-  use {'lervag/vimtex',
-      config = function()
-          require('plugin-settings.vimtex-config')
-      end
-  }
+  -- use {'lervag/vimtex',
+  --     config = function()
+  --         require('plugin-settings.vimtex-config')
+  --     end
+  -- }
 
   -- this plugin is indev and I would eventually like it once it is stable
   --  use 'brymer-meneses/grammar-guard.nvim'
@@ -121,6 +121,18 @@ return require('packer').startup({function(use)
 
   -- colorscheme
   use {"rebelot/kanagawa.nvim", commit = "fc2e308"}
+  -- use { 'maxmx03/solarized.nvim' }
+    -- use {
+    --     'maxmx03/solarized.nvim',
+    --     config = function()
+    --       vim.o.background = 'dark' -- or 'light'
+    --
+    --       vim.cmd.colorscheme 'solarized'
+    --     end
+    -- }
+  use { 'sainnhe/edge' }
+  use { 'shaunsingh/solarized.nvim' }
+  use { 'sainnhe/everforest' }
 
   -- benchmarking
   use 'tweekmonster/startuptime.vim'
@@ -185,6 +197,15 @@ return require('packer').startup({function(use)
   --         require"surround".setup {mappings_style = "surround"}
   --     end
   -- }
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  })
 
   -- git commands
   use {"tpope/vim-fugitive"}

@@ -45,4 +45,7 @@ vim.opt.colorcolumn = "89"
 
 -- vim.o.showmatch = true
 
-vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme vim")
+-- vim.cmd("colorscheme solarized")
+--vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme everforest")
